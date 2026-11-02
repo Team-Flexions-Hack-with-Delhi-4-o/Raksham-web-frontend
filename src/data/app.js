@@ -17,7 +17,7 @@ import {
 export const SACHI_AVATAR_URL = 'https://res.cloudinary.com/dmloakbty/image/upload/v1793351573/Sachi-Ai_mruvru.png'
 
 // Placeholder identity until real authentication exists.
-export const mockUser = { name: 'Naman', initials: 'NS' }
+export const mockUser = { name: 'Aditya', initials: 'A' }
 
 // Sidebar entries, in display order. Labels live in the locale files under `app.nav.<labelKey>`.
 export const appNav = [

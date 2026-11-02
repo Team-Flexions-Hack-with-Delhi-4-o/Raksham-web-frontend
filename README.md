@@ -1,76 +1,104 @@
-# Raksham — Web Frontend
+# Raksham
 
-Raksham is an AI-guided legal assistance web application for Indian citizens. This repository holds its customer-facing web frontend.
+### Legal help, made easier to understand.
 
-**Current phase:** public homepage UI implemented from the supplied design references (hero, emergency helplines, Why Raksham, category selection, How it works, Human help). It is static: there is no routing, backend integration, questionnaire, or advocate data yet.
+Raksham is a legal-assistance platform designed to help people in India find clear, accessible information and the right next steps. This repository contains the **Raksham web frontend**. The frontend connects to the Raksham API when its base URL is configured.
 
-## Technology stack
+| | |
+| --- | --- |
+| **Live backend** | [raksham.onrender.com](https://raksham.onrender.com/) |
+| **API base URL** | `https://raksham.onrender.com/api/v1` |
+| **Frontend** | React 19 · Vite 8 |
 
-- React 19 (JavaScript / JSX, no TypeScript)
-- Vite 8
-- Tailwind CSS 4 (via `@tailwindcss/vite`; no PostCSS or `tailwind.config.js` needed). Page styling lives in plain CSS files under `src/styles/`, driven by design tokens in `tokens.css`
-- Lucide React (icons) and Inter (self-hosted via `@fontsource-variable/inter`)
-- ESLint 10 (flat config)
+> **Note:** The deployment link above is the backend service, not the frontend website.
 
-## Prerequisites
+## What’s inside
 
-- Node.js 20.19+ (developed on Node 24)
-- npm
+- Public landing page, sign-in and account creation screens
+- Signed-in application routes for the dashboard, Sachi assistant, legal resources, drafts, checklists and advocate discovery
+- English and Hindi localization
+- Shared API client for communicating with the Raksham backend
+- Responsive interface built with React, Tailwind CSS and project design tokens
+
+Some product areas are still in development. Screens or flows that are not implemented use placeholders; backend-dependent experiences require a reachable API.
+
+## Tech stack
+
+- **React 19** with JavaScript and JSX
+- **Vite 8** for development and production builds
+- **Tailwind CSS 4** and plain CSS
+- **React Router 7** for navigation
+- **i18next** and `react-i18next` for localization
+- **Lucide React** icons and Inter variable font
+- **ESLint 10** for linting
 
 ## Getting started
 
+### Requirements
+
+- Node.js 20.19 or later
+- npm
+
+### Install and run
+
 ```bash
 npm install
+cp .env.example .env
 npm run dev
 ```
 
-The dev server runs at http://localhost:5173 by default. The frontend runs fully on its own — no backend is required.
+The development server is available at [http://localhost:5173](http://localhost:5173).
 
-## Scripts
+On Windows PowerShell, copy the example environment file with:
 
-| Command           | Description                      |
-| ----------------- | -------------------------------- |
-| `npm run dev`     | Start the development server     |
-| `npm run build`   | Create a production build (`dist/`) |
-| `npm run preview` | Preview the production build     |
-| `npm run lint`    | Run ESLint                       |
-
-## Environment variables
-
-Copy `.env.example` to `.env` for local settings. `.env` files are git-ignored; `.env.example` is tracked.
-
-| Variable            | Purpose                                           |
-| ------------------- | ------------------------------------------------- |
-| `VITE_API_BASE_URL` | Future backend base URL (unused in this phase)    |
-
-## Folder structure
-
+```powershell
+Copy-Item .env.example .env
 ```
-public/                  Static files served as-is (favicon.png, assets/)
+
+## Configuration
+
+Set the API base URL in `.env` to connect the frontend to the deployed backend:
+
+```dotenv
+VITE_API_BASE_URL=https://raksham.onrender.com/api/v1
+```
+
+The value should include `/api/v1` and should not have a trailing slash. Leave it empty to run without an API connection. Keep secrets out of frontend environment variables: values prefixed with `VITE_` are included in the browser build.
+
+See [.env.example](.env.example) for the available settings, including the quick-exit destination and optional test login.
+
+## Available commands
+
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Start the local development server |
+| `npm run build` | Create the production build in `dist/` |
+| `npm run preview` | Serve the production build locally |
+| `npm run lint` | Run ESLint |
+
+## Project structure
+
+```text
 src/
-├── app/                 Application root component (App.jsx)
-├── assets/images/       Logo and other imported images
-├── components/
-│   ├── common/          Reusable page components (helplines, cards, illustrations)
-│   ├── layout/          Layout components (Navbar)
-│   └── ui/              UI primitives (Button)
-├── data/                Static content (helplines, categories, steps, nav links)
-├── features/            One folder per product feature (reserved)
-├── hooks/               Shared React hooks (reserved)
-├── lib/                 Third-party wrappers and helpers (reserved)
-├── sections/            Homepage sections, in page order
-├── services/            Future backend communication (reserved)
-├── styles/              Design tokens and per-section CSS (index.css is the entry)
-├── utils/               Pure utility functions (reserved)
-├── App.jsx              Re-exports app/App.jsx
-└── main.jsx             Entry point
+├── app/          Application entry and route configuration
+├── assets/       Imported images and visual assets
+├── components/   Shared UI, layout, authentication and app components
+├── data/         Static content and sample data
+├── i18n/         Localization setup and English/Hindi translations
+├── pages/        Public, authentication and signed-in app pages
+├── services/     API client and feature service modules
+├── styles/       Global styles, design tokens and page styles
+└── utils/        Shared utility functions
 ```
 
-Empty directories hold a `.gitkeep` placeholder until they are used.
+## Backend deployment
 
-## Known placeholders
+The backend is hosted on Render:
 
-- "Get Started", "Answer a few questions" and category links scroll to the categories section; the guided questionnaire and category guidance pages are not built.
-- "Resources" and "About" in the navbar point at the helplines and Why Raksham sections until dedicated pages exist.
-- "Learn more" in the Human help preview is an in-page anchor; advocate discovery is not implemented.
-- Helpline numbers and descriptions are reference content in `src/data/helplines.js` and should be verified against official sources before launch.
+**[Open the Raksham backend deployment](https://raksham.onrender.com/)**
+
+Configure the frontend with `https://raksham.onrender.com/api/v1` as shown above to use the API.
+
+## Legal information
+
+Raksham is intended to provide legal information and help users navigate resources. It is not a substitute for advice from a qualified legal professional. Always verify emergency contact details and legal information with official sources.
