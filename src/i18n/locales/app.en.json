@@ -262,7 +262,9 @@
       "copied": "Copied",
       "copyFailed": "Couldn’t copy. Select the text and copy it by hand.",
       "download": "Download PDF",
-      "notice": "General information, not legal advice. Adapt it to your situation."
+      "notice": "General information, not legal advice. Adapt it to your situation.",
+      "missingTitle": "We couldn’t find that template.",
+      "missingBody": "It may have moved. Go back to see all resources."
     },
     "items": {
       "cybercrime-safety-guide": {
@@ -373,7 +375,7 @@
   "drafts": {
     "title": "My drafts",
     "sub": "Your saved drafts and summaries. You decide what is saved.",
-    "privacyTitle": "Your drafts are saved only on your account.",
+    "privacyTitle": "Your drafts stay in this browser tab only.",
     "privacyBody": "Nothing is filed, sent, or shared by Raksham. You can view, export, or delete them anytime.",
     "search": "Search drafts by title or topic",
     "showing_one": "Showing {{count}} draft",
@@ -394,7 +396,7 @@
   "checklist": {
     "title": "My checklist",
     "sub": "Your saved next steps. Track what you’ve done and what still needs attention.",
-    "privacyTitle": "Your checklists are saved only on your account.",
+    "privacyTitle": "Your checklists stay in this browser tab only.",
     "privacyBody": "Nothing is filed, sent, or shared by Raksham. You decide what to save and what to do next.",
     "search": "Search checklist items",
     "totalTasks": "Total tasks",

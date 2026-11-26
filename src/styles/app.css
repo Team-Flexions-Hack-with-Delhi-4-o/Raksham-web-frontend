@@ -6,6 +6,8 @@
   --app-muted: #777b84;
   --app-border: #e3e5e8;
   --app-soft: #f4f4f4;
+  /* Secondary text that has to pass WCAG AA at small sizes; --app-muted is 3.9:1 on --app-soft. */
+  --app-muted-strong: #5f6368;
   --app-yellow: var(--color-yellow);
   display: flex;
   min-height: 100vh;
@@ -627,6 +629,59 @@
 
 .dash-continue__cta:hover { background: #eab800; }
 .dash-continue__cta svg { width: 18px; height: 18px; }
+
+/* "Continue where you left off": the most recently touched drafts and unfinished checklists. */
+.dash-continue__list { display: grid; gap: 8px; margin-top: 14px; }
+
+.dash-continue__item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 14px;
+  border: 1px solid var(--app-border);
+  border-radius: 12px;
+  background: var(--app-soft);
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.dash-continue__item:hover { border-color: var(--app-muted-strong); background: var(--color-white); }
+
+.dash-continue__icon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  background: var(--color-white);
+  color: var(--app-text);
+}
+
+.dash-continue__icon svg { width: 19px; height: 19px; }
+
+.dash-continue__text { display: grid; gap: 2px; min-width: 0; }
+
+.dash-continue__name {
+  font-size: 0.98rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dash-continue__meta { font-size: 0.86rem; color: var(--app-muted-strong); }
+
+.dash-continue__arrow {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  margin-left: auto;
+  color: var(--app-muted-strong);
+  transition: transform 0.15s ease;
+}
+
+.dash-continue__item:hover .dash-continue__arrow { transform: translateX(3px); color: var(--app-text); }
 
 .dash-control { display: flex; align-items: center; gap: 22px; }
 

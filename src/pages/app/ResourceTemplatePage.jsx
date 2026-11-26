@@ -20,8 +20,8 @@ function ResourceTemplatePage() {
       <main className="dash lib-page res-page">
         <AppPageHeader title={t('app.resources.title')} />
         <section className="lib-empty">
-          <h2>{t('app.resources.article.missingTitle')}</h2>
-          <p>{t('app.resources.article.missingBody')}</p>
+          <h2>{t('app.resources.template.missingTitle')}</h2>
+          <p>{t('app.resources.template.missingBody')}</p>
           <Link className="dash-continue__cta" to="/app/resources">{t('app.resources.article.back')}</Link>
         </section>
         <LibraryFooter disclaimer={t('app.resources.footer')} />

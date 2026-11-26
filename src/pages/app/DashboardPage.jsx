@@ -1,15 +1,18 @@
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { ArrowRight, FileText, Info, Landmark, ShieldCheck, User } from 'lucide-react'
+import { ArrowRight, FileText, Info, Landmark, ListChecks, ShieldCheck, User } from 'lucide-react'
 import LanguageSwitch from '../../components/app/LanguageSwitch.jsx'
 import QuickExitButton from '../../components/app/QuickExitButton.jsx'
 import EmergencyBanner from '../../components/app/EmergencyBanner.jsx'
 import AssistantCard from '../../components/app/AssistantCard.jsx'
 import FeatureCard from '../../components/app/FeatureCard.jsx'
 import { mockUser } from '../../data/app.js'
+import { continueItems } from '../../utils/continueItems.js'
 
 function DashboardPage() {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
+  // Read on every render, so coming back to the dashboard reflects edits made elsewhere.
+  const items = continueItems(t, i18n.language)
 
   return (
     <main className="dash">
@@ -57,21 +60,40 @@ function DashboardPage() {
       <div className="dash-lower">
         <section className="dash-continue" aria-labelledby="continue-title">
           <h2 id="continue-title">{t('app.continue.title')}</h2>
-          <div className="dash-continue__body">
-            <span className="dash-continue__art" aria-hidden="true">
-              <span className="dash-continue__ring">
-                <FileText strokeWidth={1.4} />
+          {items.length > 0 ? (
+            <ul className="dash-continue__list">
+              {items.map((item) => (
+                <li key={item.key}>
+                  <Link className="dash-continue__item" to={item.to}>
+                    <span className="dash-continue__icon" aria-hidden="true">
+                      {item.kind === 'draft' ? <FileText strokeWidth={1.6} /> : <ListChecks strokeWidth={1.6} />}
+                    </span>
+                    <span className="dash-continue__text">
+                      <span className="dash-continue__name">{item.title}</span>
+                      <span className="dash-continue__meta">{item.meta}</span>
+                    </span>
+                    <ArrowRight className="dash-continue__arrow" aria-hidden="true" strokeWidth={2.25} />
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <div className="dash-continue__body">
+              <span className="dash-continue__art" aria-hidden="true">
+                <span className="dash-continue__ring">
+                  <FileText strokeWidth={1.4} />
+                </span>
               </span>
-            </span>
-            <div>
-              <h3>{t('app.continue.emptyTitle')}</h3>
-              <p>{t('app.continue.emptyBody')}</p>
-              <Link className="dash-continue__cta" to="/app/problem-areas">
-                {t('app.continue.cta')}
-                <ArrowRight aria-hidden="true" strokeWidth={2.25} />
-              </Link>
+              <div>
+                <h3>{t('app.continue.emptyTitle')}</h3>
+                <p>{t('app.continue.emptyBody')}</p>
+                <Link className="dash-continue__cta" to="/app/problem-areas">
+                  {t('app.continue.cta')}
+                  <ArrowRight aria-hidden="true" strokeWidth={2.25} />
+                </Link>
+              </div>
             </div>
-          </div>
+          )}
         </section>
 
         <section className="dash-control" aria-labelledby="control-title">

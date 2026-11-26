@@ -7,7 +7,7 @@ import EmergencyBanner from '../../components/app/EmergencyBanner.jsx'
 import LibraryFooter from '../../components/app/LibraryFooter.jsx'
 import { exportDraft, listDrafts, updateDraft } from '../../services/draftService.js'
 import { draftText } from '../../utils/sampleText.js'
-import { formatDate } from '../../utils/formatDate.js'
+import { formatDate, today } from '../../utils/formatDate.js'
 
 // The draft text is edited here and kept for this browser tab only (see draftService).
 function DraftEditor({ draft }) {
@@ -15,15 +15,18 @@ function DraftEditor({ draft }) {
   const text = draftText(draft, t)
   const [body, setBody] = useState(text.body)
   const [saved, setSaved] = useState(false)
+  // Kept in state so the header shows the save that just happened.
+  const [updatedAt, setUpdatedAt] = useState(draft.updatedAt)
 
   const save = () => {
     updateDraft(draft.id, { body })
+    setUpdatedAt(today())
     setSaved(true)
   }
 
   return (
     <>
-      <AppPageHeader title={text.title} subtitle={`${text.area} · ${t('app.drafts.updated', { date: formatDate(draft.updatedAt, i18n.language) })}`} />
+      <AppPageHeader title={text.title} subtitle={`${text.area} · ${t('app.drafts.updated', { date: formatDate(updatedAt, i18n.language) })}`} />
       <Link className="detail-back" to="/app/drafts">
         <ArrowLeft aria-hidden="true" strokeWidth={1.8} />
         {t('app.drafts.back')}

@@ -16,6 +16,7 @@ const ERROR_KEYS = {
   AI_UNAVAILABLE: 'unavailable',
   AI_BAD_RESPONSE: 'unavailable',
   network: 'network',
+  timeout: 'timeout',
   NOT_FOUND: 'notFound',
 }
 
