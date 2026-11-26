@@ -9,14 +9,14 @@
   flex-wrap: wrap;
   align-items: flex-end;
   justify-content: space-between;
-  gap: 20px 32px;
+  gap: 16px 24px;
 }
 
 .advf__title {
   margin-top: 14px;
   font-size: var(--fs-h2-md);
   font-weight: 800;
-  line-height: 1.1;
+  line-height: 1.15;
   letter-spacing: -0.04em;
 }
 
@@ -56,8 +56,8 @@
   display: flex;
   align-items: center;
   gap: 14px;
-  margin-top: 28px;
-  padding: 14px 20px;
+  margin-top: 20px;
+  padding: 12px 16px;
   border: 1px solid var(--color-border);
   border-left: 5px solid var(--color-yellow);
   border-radius: 14px;
@@ -72,9 +72,9 @@
   display: grid;
   grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) auto;
   align-items: end;
-  gap: 24px 40px;
-  margin-top: 20px;
-  padding: 22px 28px;
+  gap: 18px 28px;
+  margin-top: 16px;
+  padding: 18px 22px;
   border: 1px solid var(--color-border);
   border-radius: 20px;
   background: #fff;
@@ -83,11 +83,11 @@
 
 .advf__field { display: grid; gap: 12px; font-size: 0.9375rem; font-weight: 600; }
 .advf__field > span { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
-.advf__field strong { font-size: 1.35rem; font-weight: 800; letter-spacing: -0.02em; }
+.advf__field strong { font-size: 1.2rem; font-weight: 800; letter-spacing: -0.02em; }
 .advf__field small { display: flex; justify-content: space-between; font-size: 0.78rem; font-weight: 500; color: var(--color-muted); }
 
 .advf__field select {
-  min-height: 48px;
+  min-height: 44px;
   padding: 0 14px;
   border: 1px solid var(--color-border);
   border-radius: 12px;
@@ -141,8 +141,8 @@
   display: grid;
   justify-items: center;
   gap: 10px;
-  margin-top: 28px;
-  padding: 40px 20px;
+  margin-top: 20px;
+  padding: 28px 20px;
   border: 1px dashed var(--color-border);
   border-radius: 20px;
   color: var(--color-muted);
@@ -153,7 +153,7 @@
   display: flex;
   align-items: center;
   gap: 14px;
-  margin-top: 28px;
+  margin-top: 20px;
   font-size: 0.9375rem;
   color: var(--color-muted);
 }
@@ -165,7 +165,7 @@
 .rcar__stage {
   display: grid;
   justify-items: center;
-  padding: 28px 0 12px;
+  padding: 20px 0 8px;
   overflow-x: clip;
   perspective: 2400px;
   touch-action: pan-y;
@@ -195,8 +195,8 @@
 .hscroll__arrow {
   display: grid;
   place-items: center;
-  width: 48px;
-  height: 48px;
+  width: 44px;
+  height: 44px;
   border: 1px solid var(--color-border);
   border-radius: 50%;
   background: #fff;
@@ -215,13 +215,13 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 12px;
   box-sizing: border-box;
   height: 100%;
-  width: min(352px, 82vw);
-  padding: 22px;
+  width: min(320px, 82vw);
+  padding: 18px;
   border: 1px solid var(--color-border);
-  border-radius: 22px;
+  border-radius: 18px;
   background: #fff;
   box-shadow: var(--shadow-card);
   transition: transform 0.2s, box-shadow 0.2s;
@@ -241,8 +241,8 @@
 }
 
 .adv-fcard__top { display: flex; align-items: center; gap: 14px; }
-.adv-fcard__photo { flex: none; width: 72px; height: 72px; overflow: hidden; border-radius: 50%; background: #f5f3f1; }
-.adv-fcard__name { font-size: 1.15rem; font-weight: 800; letter-spacing: -0.01em; }
+.adv-fcard__photo { flex: none; width: 60px; height: 60px; overflow: hidden; border-radius: 50%; background: #f5f3f1; }
+.adv-fcard__name { font-size: 1.0625rem; font-weight: 800; letter-spacing: -0.01em; }
 .adv-fcard__badges { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
 
 .advf-verified {
@@ -268,7 +268,7 @@
   letter-spacing: 0.04em;
 }
 
-.adv-fcard__price { font-size: 2.1rem; font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; }
+.adv-fcard__price { font-size: 1.7rem; font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; }
 .adv-fcard__price small { font-size: 0.85rem; font-weight: 500; letter-spacing: 0; color: var(--color-muted); }
 
 .adv-meter { height: 8px; overflow: hidden; border-radius: 8px; background: #f0eeec; }
@@ -280,7 +280,7 @@
 .adv-fcard__meta--icons svg + svg, .adv-fcard__meta--icons svg:not(:first-child) { margin-left: 8px; }
 
 .adv-chips { display: flex; flex-wrap: wrap; gap: 8px; }
-.adv-chip { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px; background: #f5f3f1; font-size: 0.85rem; font-weight: 600; white-space: nowrap; }
+.adv-chip { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border-radius: 999px; background: #f5f3f1; font-size: 0.85rem; font-weight: 600; white-space: nowrap; }
 .adv-chip svg { width: 16px; height: 16px; }
 
 .adv-fcard__actions { display: flex; gap: 10px; margin-top: auto; padding-top: 4px; }
@@ -288,7 +288,7 @@
   display: grid;
   flex: 1;
   place-items: center;
-  min-height: 48px;
+  min-height: 44px;
   padding: 0 10px;
   border: 1.5px solid var(--color-ink);
   border-radius: 12px;
