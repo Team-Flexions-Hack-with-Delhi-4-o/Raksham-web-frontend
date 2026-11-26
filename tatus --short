@@ -1,0 +1,10 @@
+ src/components/app/ChatMessage.jsx     |  1 [32m+[m
+ src/i18n/locales/app.en.json           |  8 [32m+++++[m[31m---[m
+ src/i18n/locales/app.hi.json           |  8 [32m+++++[m[31m---[m
+ src/pages/app/AskSachiPage.jsx         |  7 [32m+++[m[31m----[m
+ src/pages/app/DraftDetailPage.jsx      |  7 [32m+++++[m[31m--[m
+ src/pages/app/ResourceTemplatePage.jsx |  4 [32m++[m[31m--[m
+ src/sections/HeroSection.jsx           |  2 [32m+[m[31m-[m
+ src/services/apiClient.js              | 10 [32m++++++++[m[31m--[m
+ src/utils/legalErrors.js               |  2 [32m++[m
+ 9 files changed, 32 insertions(+), 17 deletions(-)
