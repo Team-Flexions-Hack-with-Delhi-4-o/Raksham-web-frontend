@@ -10,6 +10,8 @@ const KEYS = {
   LEGAL_SEARCH_BAD_RESPONSE: 'unavailable',
   LEGAL_DOCUMENT_NOT_FOUND: 'notFound',
   network: 'network',
+  // A client-side timeout means the backend did not answer in time.
+  timeout: 'unavailable',
 }
 
 export const legalErrorKey = (reason) => KEYS[reason] ?? 'generic'

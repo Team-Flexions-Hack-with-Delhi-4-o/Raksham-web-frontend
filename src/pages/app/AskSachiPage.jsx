@@ -5,7 +5,6 @@ import ChatHeader from '../../components/app/ChatHeader.jsx'
 import ChatThread from '../../components/app/ChatThread.jsx'
 import ChatComposer from '../../components/app/ChatComposer.jsx'
 import { useSachiChat } from '../../hooks/useSachiChat.js'
-import { sachiQuestions } from '../../data/sachiQuestions.js'
 
 function SachiChat({ description, area }) {
   const { t } = useTranslation()
@@ -18,7 +17,7 @@ function SachiChat({ description, area }) {
     endRef.current?.scrollIntoView({ behavior: 'smooth', block: 'end' })
   }, [state.messages.length, chat.typing, chat.showQuickReplies])
 
-  const progress = (chat.current / (chat.total + 1)) * 100
+  const progress = (chat.current / chat.total) * 100
 
   return (
     <div className="chat">
@@ -36,8 +35,8 @@ function SachiChat({ description, area }) {
             className="chat__bar"
             role="progressbar"
             aria-valuemin={0}
-            aria-valuemax={sachiQuestions.length}
-            aria-valuenow={state.index}
+            aria-valuemax={chat.total}
+            aria-valuenow={chat.current}
           >
             <span style={{ width: `${progress}%` }} />
           </div>
