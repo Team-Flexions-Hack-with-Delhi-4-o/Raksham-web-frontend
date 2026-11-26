@@ -81,6 +81,16 @@ deployed API URL plus the demo login.
 - Adding a signed-in screen: page in `src/pages/app/`, route in `src/app/App.jsx`, nav entry in
   `appNav` (`src/data/app.js`), CSS in a `src/styles/app-*.css` file.
 
+- **Public site vs app CSS is a hard boundary, and it is already mostly enforced by who reads what.**
+  `tokens.css`'s `--fs-*`, `--section-space`, `--wrap-pad`, `--nav-height` and `--helpline-overlap`
+  are consumed only by the public stylesheets (`hero`/`why`/`categories`/`how-it-works`/
+  `human-help`/`advocate-finder`/`resources`/`privacy`/`navbar`/`footer`), never by `app-*.css` or
+  `auth.css` — so they are the safe place to retune the public type scale and vertical rhythm.
+  **Not** safe: `--color-yellow` (aliased by `--app-yellow` in `app.css`) and `.btn`/`.btn--md`
+  (shared with the auth screens). `.btn--sm`/`--lg`/`--xl` are public-only.
+  `components/advocates/*` (RingCarousel, AdvocateBudgetCard, AdvocatePortrait) are public-only;
+  the signed-in app has its own `components/app/AdvocateCard.jsx` and the `adv-*`/`adv-btn` classes.
+
 ## Editing files (gotcha)
 
 Source files are checked out with **CRLF** line endings, and `read_file` normalises them in its

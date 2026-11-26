@@ -15,20 +15,20 @@
 
   /* Typography */
   --font-sans: 'Inter Variable', system-ui, -apple-system, 'Segoe UI', 'Nirmala UI', 'Noto Sans Devanagari', 'Devanagari Sangam MN', sans-serif;
-  --fs-display: clamp(2rem, 5.8vw, 5.2rem);
-  --fs-h2: clamp(2rem, 4.6vw, 4.2rem);
-  --fs-h2-xl: clamp(2.1rem, 5.1vw, 4.6rem);
-  --fs-h2-lg: clamp(2rem, 3.7vw, 3.4rem);
-  --fs-h2-md: clamp(1.9rem, 3.3vw, 2.95rem);
-  --fs-h2-sm: clamp(1.6rem, 2.4vw, 2.15rem);
-  --fs-lead: clamp(1rem, 1.4vw, 1.25rem);
+  --fs-display: clamp(1.9rem, 3.5vw, 3.6rem);
+  --fs-h2: clamp(1.6rem, 2.6vw, 2.6rem);
+  --fs-h2-xl: clamp(1.7rem, 2.9vw, 2.9rem);
+  --fs-h2-lg: clamp(1.6rem, 2.4vw, 2.4rem);
+  --fs-h2-md: clamp(1.5rem, 2.1vw, 2.1rem);
+  --fs-h2-sm: clamp(1.35rem, 1.7vw, 1.7rem);
+  --fs-lead: clamp(0.95rem, 1.1vw, 1.0625rem);
 
   /* Layout */
   --wrap-width: 1440px;
-  --wrap-pad: clamp(20px, 4.7vw, 68px);
-  --nav-height: 84px;
-  --helpline-overlap: 80px;
-  --section-space: clamp(64px, 7vw, 100px);
+  --wrap-pad: clamp(20px, 3.2vw, 48px);
+  --nav-height: 76px;
+  --helpline-overlap: 64px;
+  --section-space: clamp(40px, 4vw, 64px);
 
   /* Shape */
   --radius-card: 16px;
